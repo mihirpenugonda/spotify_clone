@@ -40,7 +40,14 @@ function App() {
           playlists: playlists,
         });
       });
-    }
+
+      spotify.getPlaylist('37i9dQZEVXcOkCal3rq3PJ').then(response =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
+    };
   }, []);
 
   // console.log(user);
